@@ -1,3 +1,12 @@
+# About project
+In this project, I demonstrated my skills in ReactJS, ReactRedux, and for designing SASS and FontAwesome. I also worked with npm packages like axios, react-router-dom, and the library 'react-slick' which I used in creating carousel slide for my movies. This is my first big project and I am still new to all these concepts but with various youtube tutorials and some Udemy courses, I managed to get it right. Since API doesn’t have a ‘most popular’ option, on the home page I added my custom search word.
+
+# Know Your Show
+As about application this is application made for getting info about some movies or TV-shows. As you enter the app, on the home page, you see "Lord of the Rings" movies and all the TV-shows that contains a word "Prison" in it. In the header is a search bar where you can search for movie or TV-show you want to get infomrations about. When the search is complete, you will get all the movies and TV-shows that have the key word you searched for. Also you can click on movie card and get more information about movie(TV-show) in question.
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
