@@ -47,6 +47,7 @@ const MovieListing = () => {
       <div className="show-list">
         <h2>Shows</h2>
         <div className="movie-container">
+    
           {shows && <Slider {...Settings}>{renderShows}</Slider>}
         </div>
       </div>
