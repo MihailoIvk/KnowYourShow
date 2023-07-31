@@ -9,41 +9,45 @@ import "./MovieListing.scss";
 const MovieListing = () => {
   const movies = useSelector(getAllMovies);
   const shows = useSelector(getAllShows);
-  let renderMovies,
-    renderShows = "";
+  let renderMovies = null;
+  let renderShows = null;
 
-  renderMovies =
-    movies?.Response === "True" ? (
-      movies.Search.map((movie, index) => (
-        <MovieCard key={index} data={movie} />
-      ))
-    ) : (
+  if (movies && movies.Response === "True") {
+    renderMovies = movies.Search.map((movie, index) => (
+      <MovieCard key={index} data={movie} />
+    ));
+  } else {
+    renderMovies = (
       <div className="movies-error">
-        <h3>{movies.Error}</h3>
+        <h3>{movies?.Error}</h3>
       </div>
     );
+  }
 
-  renderShows =
-    shows?.Response === "True" ? (
-      shows.Search.map((show, index) => <MovieCard key={index} data={show} />)
-    ) : (
+  if (shows && shows.Response === "True") {
+    renderShows = shows.Search.map((show, index) => (
+      <MovieCard key={index} data={show} />
+    ));
+  } else {
+    renderShows = (
       <div className="shows-error">
-        <h3>{shows.Error}</h3>
+        <h3>{shows?.Error}</h3>
       </div>
     );
+  }
 
   return (
     <div className="movie-wrapper">
       <div className="movie-list">
         <h2>Movies</h2>
         <div className="movie-container">
-          <Slider {...Settings}>{renderMovies}</Slider>
+          {movies && <Slider {...Settings}>{renderMovies}</Slider>}
         </div>
       </div>
       <div className="show-list">
         <h2>Shows</h2>
         <div className="movie-container">
-          <Slider {...Settings}>{renderShows}</Slider>
+          {shows && <Slider {...Settings}>{renderShows}</Slider>}
         </div>
       </div>
     </div>
