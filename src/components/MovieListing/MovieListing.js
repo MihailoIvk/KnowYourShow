@@ -13,7 +13,7 @@ const MovieListing = () => {
     renderShows = "";
 
   renderMovies =
-    movies.Response === "True" ? (
+    movies?.Response === "True" ? (
       movies.Search.map((movie, index) => (
         <MovieCard key={index} data={movie} />
       ))
@@ -24,7 +24,7 @@ const MovieListing = () => {
     );
 
   renderShows =
-    shows.Response === "True" ? (
+    shows?.Response === "True" ? (
       shows.Search.map((show, index) => <MovieCard key={index} data={show} />)
     ) : (
       <div className="shows-error">
